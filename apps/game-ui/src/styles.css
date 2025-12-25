@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Global Variables */
+:root {
+  --font-family: 'Inter', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2.5rem;
+  --font-size-sm: 0.875rem;
+  --color-primary: #667eea;
+  --color-primary-dark: #764ba2;
+  --color-text: #333;
+  --color-text-secondary: #666;
+  --color-text-muted: #999;
+  --color-border: #eee;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 15px rgba(102, 126, 234, 0.4);
+  --shadow-lg: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset & Base Styles */
+* {
+  font-family: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+/* Global Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Common Button Styles */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Common Form Styles */
+select, input {
+  font-family: var(--font-family);
+}
+
+select:focus, input:focus {
+  outline: none;
+}
+
+/* Common Text */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-text);
+}

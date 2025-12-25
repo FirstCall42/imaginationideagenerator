@@ -1,0 +1,43 @@
+<div class="settings-overlay" *ngIf="isOpen" (click)="closeSettings()"></div>
+
+<div class="settings-container" *ngIf="isOpen">
+  <div class="settings-header">
+    <h2>Settings</h2>
+    <button class="close-btn" (click)="closeSettings()">✕</button>
+  </div>
+
+  <div class="settings-content">
+    <!-- Language Selection -->
+    <div class="setting-group">
+      <label for="language">Language</label>
+      <select 
+        id="language"
+        [value]="currentLanguage()"
+        (change)="onLanguageChange($event)"
+        class="language-dropdown"
+      >
+        <option *ngFor="let lang of availableLanguages" [value]="lang">
+          {{ lang.toUpperCase() }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Show Flavor Text Toggle -->
+    <div class="setting-group toggle-group">
+      <label for="flavor-text">Show Flavor Text</label>
+      <button 
+        id="flavor-text"
+        [class.active]="showFlavorText()"
+        (click)="toggleFlavorText()"
+        class="toggle-btn"
+        [attr.aria-label]="showFlavorText() ? 'Flavor text enabled' : 'Flavor text disabled'"
+      >
+        <span class="toggle-switch"></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="settings-footer">
+    <button class="done-btn" (click)="closeSettings()">Done</button>
+  </div>
+</div>
