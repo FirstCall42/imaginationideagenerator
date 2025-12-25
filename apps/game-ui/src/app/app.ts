@@ -89,6 +89,11 @@ export class App {
     };
   }
 
+  onSetChange(event: Event): void {
+    const value = (event.target as HTMLSelectElement).value;
+    this.selectSet(value);
+  }
+
   selectSet(setId: string): void {
     this.currentSetId.set(setId);
     this.currentIndex.set(0);

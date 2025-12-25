@@ -6,7 +6,7 @@
       id="set-dropdown"
       class="set-dropdown" 
       [value]="currentSetId()" 
-      (change)="selectSet($event.target.value)"
+      (change)="onSetChange($event)"
     >
       <option *ngFor="let set of sets()" [value]="set.id">
         {{ set.name }}
