@@ -31,7 +31,6 @@ out/
 
 # Angular specific
 .angular/
-angular.json
 
 # Test coverage
 coverage/
