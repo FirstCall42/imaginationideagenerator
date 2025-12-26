@@ -5,191 +5,100 @@
       "name": "Family fun",
       "languages": ["en", "ro"],
       "charades": [
-  {
-    "id": 1,
-    "text": { "en": "Lion", "ro": "Leu" },
-    "imageUrl": "https://openclipart.org/image/400px/323352"
-  },
-  {
-    "id": 2,
-    "text": { "en": "Tiger", "ro": "Tigru" },
-    "imageUrl": "https://openclipart.org/image/400px/334906"
-  },
-  {
-    "id": 3,
-    "text": { "en": "Cow", "ro": "Vacă" },
-    "imageUrl": "https://openclipart.org/image/400px/216409"
-  },
-  {
-    "id": 4,
-    "text": { "en": "Swimming", "ro": "Înot" },
-    "imageUrl": "https://openclipart.org/image/400px/334770"
-  },
-  {
-    "id": 5,
-    "text": { "en": "Running", "ro": "Alergare" },
-    "imageUrl": "https://openclipart.org/image/400px/303379"
-  },
-  {
-    "id": 6,
-    "text": { "en": "Sleeping", "ro": "Somn" },
-    "imageUrl": "https://openclipart.org/image/400px/322999"
-  },
-  {
-    "id": 7,
-    "text": { "en": "Football player", "ro": "Fotbalist" },
-    "imageUrl": "https://openclipart.org/image/400px/349661"
-  },
-  {
-    "id": 8,
-    "text": { "en": "Reading", "ro": "Citit" },
-    "imageUrl": "https://openclipart.org/image/400px/326897"
-  },
-  {
-    "id": 9,
-    "text": { "en": "Basketball", "ro": "Baschet" },
-    "imageUrl": "https://openclipart.org/image/400px/176009"
-  },
-  {
-    "id": 10,
-    "text": { "en": "Refridgerator", "ro": "Frigider" },
-    "imageUrl": "https://openclipart.org/image/400px/352619"
-  },
-  {
-    "id": 11,
-    "text": { "en": "Groceries", "ro": "Cumpărături" },
-    "imageUrl": "https://openclipart.org/image/400px/523"
-  },
-  {
-    "id": 12,
-    "text": { "en": "Fishing", "ro": "Pescuit" },
-    "imageUrl": "https://openclipart.org/image/400px/341262"
-  },
-  {
-    "id": 13,
-    "text": { "en": "Shopping", "ro": "La cumpărături" },
-    "imageUrl": "https://openclipart.org/image/400px/318474"
-  },
-  {
-    "id": 14,
-    "text": { "en": "Jumping rope", "ro": "Sărit coarda" },
-    "imageUrl": "https://openclipart.org/image/400px/332313"
-  },
-  {
-    "id": 15,
-    "text": { "en": "Jumping", "ro": "Sărit" },
-    "imageUrl": "https://openclipart.org/image/400px/281960"
-  },
-  {
-    "id": 16,
-    "text": { "en": "Cake", "ro": "Tort" },
-    "imageUrl": "https://openclipart.org/image/400px/304137"
-  },
-  {
-    "id": 17,
-    "text": { "en": "Drum", "ro": "Tobă" },
-    "imageUrl": "https://openclipart.org/image/400px/213683"
-  },
-  {
-    "id": 18,
-    "text": { "en": "Dinosaur", "ro": "Dinozaur" },
-    "imageUrl": "https://openclipart.org/image/400px/338700"
-  },
-  {
-    "id": 19,
-    "text": { "en": "Goat", "ro": "Capră" },
-    "imageUrl": "https://openclipart.org/image/400px/326909"
-  },
-  {
-    "id": 20,
-    "text": { "en": "Super hero", "ro": "Supererou" },
-    "imageUrl": "https://openclipart.org/image/400px/332558"
-  },
-  {
-    "id": 21,
-    "text": { "en": "Boat", "ro": "Barcă" },
-    "imageUrl": "https://openclipart.org/image/400px/190061"
-  },
-  {
-    "id": 22,
-    "text": { "en": "Eating", "ro": "Mâncat" },
-    "imageUrl": "https://openclipart.org/image/400px/181650"
-  },
-  {
-    "id": 23,
-    "text": { "en": "Fish", "ro": "Pește" },
-    "imageUrl": "https://openclipart.org/image/400px/265218"
-  },
-  {
-    "id": 24,
-    "text": { "en": "Marching", "ro": "Marș" },
-    "imageUrl": "https://openclipart.org/image/400px/349587"
-  },
-  {
-    "id": 25,
-    "text": { "en": "Horse riding", "ro": "Călărie" },
-    "imageUrl": "https://openclipart.org/image/400px/342402"
-  },
-  {
-    "id": 26,
-    "text": { "en": "Watching tv", "ro": "Uitându-se la televizor" },
-    "imageUrl": "https://openclipart.org/image/400px/342033"
-  },
-  {
-    "id": 27,
-    "text": { "en": "Drinking fountain", "ro": "Fântână de apă" },
-    "imageUrl": "https://openclipart.org/image/400px/25166"
-  },
-  {
-    "id": 28,
-    "text": { "en": "Drinking", "ro": "Băut" },
-    "imageUrl": "https://openclipart.org/image/400px/330406"
-  },
-  {
-    "id": 29,
-    "text": { "en": "Apple", "ro": "Măr" },
-    "imageUrl": "https://openclipart.org/image/400px/293547"
-  },
-  {
-    "id": 30,
-    "text": { "en": "Train", "ro": "Tren" },
-    "imageUrl": "https://openclipart.org/image/400px/191529"
-  },
-  {
-    "id": 31,
-    "text": { "en": "Excavator", "ro": "Excavator" },
-    "imageUrl": "https://openclipart.org/image/400px/194591"
-  },
-  {
-    "id": 32,
-    "text": { "en": "Bowling", "ro": "Bowling" },
-    "imageUrl": "https://openclipart.org/image/400px/181692"
-  },
-  {
-    "id": 33,
-    "text": { "en": "Wrist watch", "ro": "Ceas de mână" },
-    "imageUrl": "https://openclipart.org/image/400px/193199"
-  },
-  {
-    "id": 34,
-    "text": { "en": "Cheerleader", "ro": "Majoretă" },
-    "imageUrl": "https://openclipart.org/image/400px/343799"
-  },
-  {
-    "id": 35,
-    "text": { "en": "Guitar", "ro": "Chitară" },
-    "imageUrl": "https://openclipart.org/image/400px/65095"
-  },
-  {
-    "id": 36,
-    "text": { "en": "Piano", "ro": "Pian" },
-    "imageUrl": "https://openclipart.org/image/400px/341215"
-  },
-  {
-    "id": 37,
-    "text": { "en": "Glasses", "ro": "Ochelari" },
-    "imageUrl": "https://openclipart.org/image/400px/169556"
-  }
+{"id":1,"text":{"en":"Lion","ro":"Leu"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/323352"},
+{"id":2,"text":{"en":"Tiger","ro":"Tigru"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/334906"},
+{"id":3,"text":{"en":"Cow","ro":"Vacă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/216409"},
+{"id":4,"text":{"en":"Swimming","ro":"Înot"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/334770"},
+{"id":5,"text":{"en":"Running","ro":"Alergare"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/303379"},
+{"id":6,"text":{"en":"Sleeping","ro":"Somn"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/322999"},
+{"id":7,"text":{"en":"Cooking","ro":"Gătit"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/185841"},
+{"id":8,"text":{"en":"Football player","ro":"Jucător de fotbal"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/349661"},
+{"id":9,"text":{"en":"Reading","ro":"Citit"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/326897"},
+{"id":10,"text":{"en":"Basketball","ro":"Baschet"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/176009"},
+{"id":11,"text":{"en":"Refrigerator","ro":"Frigider"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/352619"},
+{"id":12,"text":{"en":"Groceries","ro":"Alimente"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/523"},
+{"id":13,"text":{"en":"Fishing","ro":"Pescuit"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/341262"},
+{"id":14,"text":{"en":"Shopping","ro":"Cumpărături"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/318474"},
+{"id":15,"text":{"en":"Jumping rope","ro":"Sărit coarda"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/332313"},
+{"id":16,"text":{"en":"Jumping","ro":"Sărit"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/281960"},
+{"id":17,"text":{"en":"Cake","ro":"Prăjitură"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/304137"},
+{"id":18,"text":{"en":"Drum","ro":"Tobă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/213683"},
+{"id":19,"text":{"en":"Dinosaur","ro":"Dinozaur"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/2234"},
+{"id":20,"text":{"en":"Goat","ro":"Capră"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/326909"},
+{"id":21,"text":{"en":"Super hero","ro":"Supererou"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/332558"},
+{"id":22,"text":{"en":"Boat","ro":"Barcă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/190061"},
+{"id":23,"text":{"en":"Cat","ro":"Pisică"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/191701"},
+{"id":24,"text":{"en":"Listening","ro":"Ascultare"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/196387"},
+{"id":25,"text":{"en":"Pants","ro":"Pantaloni"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/168770"},
+{"id":26,"text":{"en":"Shirt","ro":"Cămașă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/177398"},
+{"id":27,"text":{"en":"Golfing","ro":"Golf"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/8264"},
+{"id":28,"text":{"en":"Hat","ro":"Pălărie"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/276325"},
+{"id":29,"text":{"en":"Eating","ro":"Mâncat"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/181650"},
+{"id":30,"text":{"en":"Fish","ro":"Pește"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/265218"},
+{"id":31,"text":{"en":"Marching","ro":"Marș"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/349587"},
+{"id":32,"text":{"en":"Horse riding","ro":"Călărie"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/342402"},
+{"id":33,"text":{"en":"Watching TV","ro":"Privit la televizor"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/342033"},
+{"id":34,"text":{"en":"Drinking fountain","ro":"Fântână de apă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/25166"},
+{"id":35,"text":{"en":"Drinking","ro":"Băut"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/330406"},
+{"id":36,"text":{"en":"Apple","ro":"Măr"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/293547"},
+{"id":37,"text":{"en":"Train","ro":"Tren"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/191529"},
+{"id":38,"text":{"en":"Excavator","ro":"Excavator"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/194591"},
+{"id":39,"text":{"en":"Bowling","ro":"Bowling"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/181692"},
+{"id":40,"text":{"en":"Wrist watch","ro":"Ceas de mână"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/193199"},
+{"id":41,"text":{"en":"Cheerleader","ro":"Majoretă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/343799"},
+{"id":42,"text":{"en":"Guitar","ro":"Chitară"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/65095"},
+{"id":43,"text":{"en":"Piano","ro":"Pian"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/341215"},
+{"id":44,"text":{"en":"Glasses","ro":"Ochelari"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/169556"},
+{"id":45,"text":{"en":"Brushing Teeth","ro":"Spălat pe dinți"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/326445"},
+{"id":46,"text":{"en":"Washing Hands","ro":"Spălat pe mâini"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/312394"},
+{"id":47,"text":{"en":"Zombie","ro":"Zombie"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/154081"},
+{"id":48,"text":{"en":"Hula hoop","ro":"Hula hoop"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/352967"},
+{"id":49,"text":{"en":"Applause","ro":"Aplauze"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/329719"},
+{"id":50,"text":{"en":"Airplane","ro":"Avion"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/174205"},
+{"id":51,"text":{"en":"Belt","ro":"Curea"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/319023"},
+{"id":52,"text":{"en":"Snowball","ro":"Bulgăre de zăpadă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/217518"},
+{"id":53,"text":{"en":"Thinking","ro":"Gândire"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/238687"},
+{"id":54,"text":{"en":"Happy","ro":"Fericit"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/278539"},
+{"id":55,"text":{"en":"Sad","ro":"Trist"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/183963"},
+{"id":56,"text":{"en":"Tennis","ro":"Tenis"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/230022"},
+{"id":57,"text":{"en":"Chicken","ro":"Găină"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/27980"},
+{"id":58,"text":{"en":"Climbing","ro":"Cățărare"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/194628"},
+{"id":59,"text":{"en":"Dancing","ro":"Dans"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/181801"},
+{"id":60,"text":{"en":"Broom","ro":"Mătură"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/323115"},
+{"id":61,"text":{"en":"Blowing nose","ro":"Suflat nasul"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/160273"},
+{"id":62,"text":{"en":"Sneezing","ro":"Strănut"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/334987"},
+{"id":63,"text":{"en":"Laughing","ro":"Râs"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/279871"},
+{"id":64,"text":{"en":"Heart","ro":"Inimă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/21281"},
+{"id":65,"text":{"en":"Ice cream","ro":"Înghețată"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/303081"},
+{"id":66,"text":{"en":"Sandwich","ro":"Sandviș"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/194414"},
+{"id":67,"text":{"en":"Bird","ro":"Pasăre"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/191741"},
+{"id":68,"text":{"en":"Watering plants","ro":"Udat plante"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/348882"},
+{"id":69,"text":{"en":"Vacuum","ro":"Aspirator"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/302650"},
+{"id":70,"text":{"en":"Singing","ro":"Cântat"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/285056"},
+{"id":71,"text":{"en":"Skiing","ro":"Schiat"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/334912"},
+{"id":72,"text":{"en":"Jacket","ro":"Jachetă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/311615"},
+{"id":73,"text":{"en":"Showering","ro":"Duș"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/333911"},
+{"id":74,"text":{"en":"Painting","ro":"Pictură"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/280043"},
+{"id":75,"text":{"en":"Ballet","ro":"Balet"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/335318"},
+{"id":76,"text":{"en":"Stretching","ro":"Întindere"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/312109"},
+{"id":77,"text":{"en":"Bowing","ro":"Aplecare"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/291645"},
+{"id":78,"text":{"en":"Digging","ro":"Săpat"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/332790"},
+{"id":79,"text":{"en":"Balancing","ro":"Echilibrare"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/38275"},
+{"id":80,"text":{"en":"Under water","ro":"Sub apă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/328895"},
+{"id":81,"text":{"en":"Balloon","ro":"Balon"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/17911"},
+{"id":82,"text":{"en":"Telephone","ro":"Telefon"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/255468"},
+{"id":83,"text":{"en":"Angry","ro":"Furios"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/351023"},
+{"id":84,"text":{"en":"Worried","ro":"Îngrijorat"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/275639"},
+{"id":85,"text":{"en":"Winking","ro":"Clipit"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/296151"},
+{"id":86,"text":{"en":"Fire","ro":"Foc"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/88963"},
+{"id":87,"text":{"en":"Exercise","ro":"Exercițiu"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/6983"},
+{"id":88,"text":{"en":"Billiards","ro":"Biliard"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/6926"},
+{"id":89,"text":{"en":"Darts","ro":"Darts"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/315197"},
+{"id":90,"text":{"en":"Explosion","ro":"Explozie"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/351755"},
+{"id":91,"text":{"en":"Banana","ro":"Banană"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/196028"},
+{"id":92,"text":{"en":"Dice","ro":"Zar"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/203621"},
+{"id":93,"text":{"en":"Taking a photo","ro":"Fotografiere"},"type":"Verb","imageUrl":"https://openclipart.org/image/400px/336787"},
+{"id":94,"text":{"en":"Trumpet","ro":"Trompetă"},"type":"Noun","imageUrl":"https://openclipart.org/image/400px/281520"}
 ]
     }
   ]
