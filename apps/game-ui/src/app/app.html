@@ -1,97 +1,97 @@
-<div class="game-container" *ngIf="charadesResource.isLoading() === false && sets().length > 0">
-  <!-- Set Selection -->
-  <div class="set-selector">
-    <label for="set-dropdown">Choose Set:</label>
-    <select 
-      id="set-dropdown"
-      class="set-dropdown" 
-      [value]="currentSetId()" 
-      (change)="onSetChange($event)"
+@if (charadesResource.isLoading() === false && sets().length > 0) {
+  <div class="game-container">
+    <!-- Set Selection -->
+    <div class="set-selector">
+      <label for="set-dropdown">Choose Set:</label>
+      <select 
+        id="set-dropdown"
+        class="set-dropdown" 
+        [value]="currentSetId()" 
+        (change)="onSetChange($event)"
+      >
+        @for (set of sets(); track set.id) {
+          <option [value]="set.id">
+            {{ set.name }}
+          </option>
+        }
+      </select>
+    </div>
+
+    <!-- Game Card -->
+    <div 
+      class="game-card"
+      (touchstart)="onTouchStart($event)"
+      (touchend)="onTouchEnd($event)"
     >
-      <option *ngFor="let set of sets()" [value]="set.id">
-        {{ set.name }}
-      </option>
-    </select>
-  </div>
+      <!-- Top Text -->
+      @if (getTopText()) {
+        <div class="text-area top-text">
+          <span class="language-badge">{{ currentLanguage().toUpperCase() }}</span>
+          <h2>{{ getTopText() }}</h2>
+        </div>
+      }
 
-  <!-- Game Card -->
-  <div 
-    class="game-card"
-    (touchstart)="onTouchStart($event)"
-    (touchend)="onTouchEnd($event)"
-  >
-    <!-- Top Text -->
-    <div class="text-area top-text" *ngIf="getTopText()">
-      <span class="language-badge">{{ currentLanguage().toUpperCase() }}</span>
-      <h2>{{ getTopText() }}</h2>
+      <!-- Image -->
+      <div class="image-area">
+        @if (getCurrentCharade()) {
+          <img 
+            [src]="getCurrentCharade()?.imageUrl" 
+            alt="Charade image"
+            class="charade-image"
+          />
+        }
+      </div>
     </div>
 
-    <!-- Image -->
-    <div class="image-area">
-      <img 
-        *ngIf="getCurrentCharade()" 
-        [src]="getCurrentCharade()?.imageUrl" 
-        alt="Charade image"
-        class="charade-image"
-      />
-    </div>
-
-    <!-- Bottom Text (Flavor Text) -->
-    <div class="text-area bottom-text" *ngIf="getBottomText() && showFlavorText()">
-      <h3>{{ getBottomText() }}</h3>
-    </div>
-  </div>
-
-  <!-- Controls -->
-  <div class="controls">
-    <!-- Settings Button -->
-    <div class="settings-button-container">
-      <button class="settings-btn" (click)="toggleSettings()" title="Settings">
-        ⚙️
-      </button>
-    </div>
-
-    <!-- Navigation -->
-    <div class="navigation">
-      <button class="nav-btn prev-btn" (click)="previousCharade()" title="Previous">
-        ← Previous
-      </button>
-      
-      <div class="progress">
-        {{ currentIndex() + 1 }} / {{ getCharadeCount() }}
+    <!-- Controls -->
+    <div class="controls">
+      <!-- Settings Button -->
+      <div class="settings-button-container">
+        <button class="settings-btn" (click)="toggleSettings()" title="Settings">
+          ⚙️
+        </button>
       </div>
 
-      <button class="nav-btn next-btn" (click)="nextCharade()" title="Next">
-        Next →
-      </button>
+      <!-- Navigation -->
+      <div class="navigation">
+        <button class="nav-btn prev-btn" (click)="previousCharade()" title="Previous">
+          ← Previous
+        </button>
+
+        <button class="nav-btn next-btn" (click)="nextCharade()" title="Next">
+          Next →
+        </button>
+      </div>
     </div>
   </div>
-</div>
+}
 
 <!-- Settings Component -->
 <app-settings
   [isOpen]="showSettings()"
   [currentLanguage]="currentLanguage"
-  [showFlavorText]="showFlavorText"
   [availableLanguages]="getAvailableLanguages()"
   (close)="toggleSettings()"
   (languageChange)="setLanguage($event)"
-  (flavorTextToggle)="showFlavorText.set($event)"
 ></app-settings>
 
 <!-- Loading State -->
-<div class="loading-container" *ngIf="charadesResource.isLoading() === true">
-  <div class="spinner"></div>
-  <p>Loading charades...</p>
-</div>
+@if (charadesResource.isLoading() === true) {
+  <div class="loading-container">
+    <div class="spinner"></div>
+    <p>Loading charades...</p>
+  </div>
+}
 
 <!-- Error/Empty State -->
-<div class="error-container" *ngIf="charadesResource.isLoading() === false && sets().length === 0">
-  <div class="error-message">
-    <h2>No sets found</h2>
-    <p>Check the browser console for errors.</p>
-    <p>Make sure charades.json exists in src/assets/</p>
+@if (charadesResource.isLoading() === false && sets().length === 0) {
+  <div class="error-container">
+    <div class="error-message">
+      <h2>No sets found</h2>
+      <p>Check the browser console for errors.</p>
+      <p>Make sure charades.json exists in src/assets/</p>
+    </div>
   </div>
-</div>
+}
 
 <router-outlet />

@@ -7,7 +7,6 @@ import { SettingsComponent } from './settings.component';
 interface Charade {
   id: number;
   text: { [key: string]: string };
-  flavorText: { [key: string]: string };
   imageUrl: string;
 }
 
@@ -36,7 +35,10 @@ export class App {
   currentIndex = signal(0);
   currentLanguage = signal('en');
   showSettings = signal(false);
-  showFlavorText = signal(true);
+
+  // History and random selection tracking
+  private selectionHistory = signal<number[]>([]);
+  private usedIndices = signal<Set<number>>(new Set());
 
   // Swipe gesture tracking
   private touchStartX = 0;
@@ -74,13 +76,11 @@ export class App {
             {
               id: 1,
               text: { en: 'Superhero' },
-              flavorText: { en: 'Act it out!' },
               imageUrl: 'https://images.unsplash.com/photo-1578926078328-123456789012?w=400&h=400&fit=crop'
             },
             {
               id: 2,
               text: { en: 'Dancing' },
-              flavorText: { en: 'Move and groove!' },
               imageUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69b13d835?w=400&h=400&fit=crop'
             }
           ]
@@ -98,7 +98,10 @@ export class App {
     this.currentSetId.set(setId);
     this.currentIndex.set(0);
     this.currentLanguage.set(this.getCurrentSet()?.languages[0] || 'en');
+    this.selectionHistory.set([]);
+    this.usedIndices.set(new Set());
     this.shuffleCharades();
+    this.selectRandomCharade();
   }
 
   getCurrentSet(): CharadeSet | null {
@@ -128,15 +131,47 @@ export class App {
   }
 
   nextCharade(): void {
-    const set = this.getCurrentSet();
-    if (!set || set.charades.length === 0) return;
-    this.currentIndex.set((this.currentIndex() + 1) % set.charades.length);
+    this.selectRandomCharade();
   }
 
   previousCharade(): void {
+    const history = this.selectionHistory();
+    if (history.length <= 1) return;
+    
+    const removedIndex = history.pop()!;
+    this.selectionHistory.set([...history]);
+    
+    const used = this.usedIndices();
+    used.delete(removedIndex);
+    this.usedIndices.set(new Set(used));
+    
+    const previousIndex = history[history.length - 1];
+    this.currentIndex.set(previousIndex);
+  }
+
+  private selectRandomCharade(): void {
     const set = this.getCurrentSet();
     if (!set || set.charades.length === 0) return;
-    this.currentIndex.set(this.currentIndex() === 0 ? set.charades.length - 1 : this.currentIndex() - 1);
+    
+    const used = this.usedIndices();
+    const available = Array.from({ length: set.charades.length }, (_, i) => i)
+      .filter(i => !used.has(i));
+    
+    if (available.length === 0) {
+      this.usedIndices.set(new Set());
+      available.push(...Array.from({ length: set.charades.length }, (_, i) => i));
+    }
+    
+    const randomIndex = available[Math.floor(Math.random() * available.length)];
+    const history = this.selectionHistory();
+    history.push(randomIndex);
+    this.selectionHistory.set([...history]);
+    
+    const newUsed = new Set(used);
+    newUsed.add(randomIndex);
+    this.usedIndices.set(newUsed);
+    
+    this.currentIndex.set(randomIndex);
   }
 
   setLanguage(lang: string): void {
@@ -150,11 +185,6 @@ export class App {
   getTopText(): string {
     const charade = this.getCurrentCharade();
     return charade ? (charade.text[this.currentLanguage()] || charade.text['en'] || '') : '';
-  }
-
-  getBottomText(): string {
-    const charade = this.getCurrentCharade();
-    return charade ? (charade.flavorText[this.currentLanguage()] || charade.flavorText['en'] || '') : '';
   }
 
   getCharadeCount(): number {

@@ -21,20 +21,6 @@
         </option>
       </select>
     </div>
-
-    <!-- Show Flavor Text Toggle -->
-    <div class="setting-group toggle-group">
-      <label for="flavor-text">Show Flavor Text</label>
-      <button 
-        id="flavor-text"
-        [class.active]="showFlavorText()"
-        (click)="toggleFlavorText()"
-        class="toggle-btn"
-        [attr.aria-label]="showFlavorText() ? 'Flavor text enabled' : 'Flavor text disabled'"
-      >
-        <span class="toggle-switch"></span>
-      </button>
-    </div>
   </div>
 
   <div class="settings-footer">
