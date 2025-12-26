@@ -35,10 +35,12 @@ export class App {
   currentIndex = signal(0);
   currentLanguage = signal('en');
   showSettings = signal(false);
+  imageLoaded = signal(false);
 
   // History and random selection tracking
   private selectionHistory = signal<number[]>([]);
   private usedIndices = signal<Set<number>>(new Set());
+  private historyCursor = signal(-1);
 
   // Swipe gesture tracking
   private touchStartX = 0;
@@ -100,7 +102,7 @@ export class App {
     this.currentLanguage.set(this.getCurrentSet()?.languages[0] || 'en');
     this.selectionHistory.set([]);
     this.usedIndices.set(new Set());
-    this.shuffleCharades();
+    this.historyCursor.set(-1);
     this.selectRandomCharade();
   }
 
@@ -131,46 +133,57 @@ export class App {
   }
 
   nextCharade(): void {
+    this.imageLoaded.set(false);
+
+    const history = this.selectionHistory();
+    const cursor = this.historyCursor();
+
+    // If we are NOT at the end of history, move forward in history
+    if (cursor < history.length - 1) {
+      const newCursor = cursor + 1;
+      this.historyCursor.set(newCursor);
+      this.currentIndex.set(history[newCursor]);
+      return;
+    }
+
+    // Otherwise, pick a new random one
     this.selectRandomCharade();
   }
 
   previousCharade(): void {
-    const history = this.selectionHistory();
-    if (history.length <= 1) return;
+    this.imageLoaded.set(false);
     
-    const removedIndex = history.pop()!;
-    this.selectionHistory.set([...history]);
-    
-    const used = this.usedIndices();
-    used.delete(removedIndex);
-    this.usedIndices.set(new Set(used));
-    
-    const previousIndex = history[history.length - 1];
-    this.currentIndex.set(previousIndex);
+    const cursor = this.historyCursor();
+    if (cursor <= 0) return;
+
+    const newCursor = cursor - 1;
+    this.historyCursor.set(newCursor);
+    this.currentIndex.set(this.selectionHistory()[newCursor]);
   }
 
   private selectRandomCharade(): void {
     const set = this.getCurrentSet();
     if (!set || set.charades.length === 0) return;
-    
+
     const used = this.usedIndices();
-    const available = Array.from({ length: set.charades.length }, (_, i) => i)
+    let available = Array.from({ length: set.charades.length }, (_, i) => i)
       .filter(i => !used.has(i));
-    
+
     if (available.length === 0) {
+      available = Array.from({ length: set.charades.length }, (_, i) => i);
       this.usedIndices.set(new Set());
-      available.push(...Array.from({ length: set.charades.length }, (_, i) => i));
     }
-    
+
     const randomIndex = available[Math.floor(Math.random() * available.length)];
-    const history = this.selectionHistory();
-    history.push(randomIndex);
-    this.selectionHistory.set([...history]);
-    
-    const newUsed = new Set(used);
+
+    const history = [...this.selectionHistory(), randomIndex];
+    this.selectionHistory.set(history);
+    this.historyCursor.set(history.length - 1);
+
+    const newUsed = new Set(this.usedIndices());
     newUsed.add(randomIndex);
     this.usedIndices.set(newUsed);
-    
+
     this.currentIndex.set(randomIndex);
   }
 

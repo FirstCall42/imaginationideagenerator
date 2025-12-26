@@ -24,7 +24,7 @@
       (touchend)="onTouchEnd($event)"
     >
       <!-- Top Text -->
-      @if (getTopText()) {
+      @if (getTopText() && imageLoaded()) {
         <div class="text-area top-text">
           <span class="language-badge">{{ currentLanguage().toUpperCase() }}</span>
           <h2>{{ getTopText() }}</h2>
@@ -33,11 +33,20 @@
 
       <!-- Image -->
       <div class="image-area">
+        @if (!imageLoaded()) {
+          <div class="image-loading">
+            <div class="spinner"></div>
+          </div>
+        }
+
         @if (getCurrentCharade()) {
           <img 
-            [src]="getCurrentCharade()?.imageUrl" 
+            [src]="getCurrentCharade()?.imageUrl"
             alt="Charade image"
             class="charade-image"
+            [class.hidden]="!imageLoaded()"
+            (load)="imageLoaded.set(true)"
+            (error)="imageLoaded.set(true)"
           />
         }
       </div>
@@ -89,7 +98,6 @@
     <div class="error-message">
       <h2>No sets found</h2>
       <p>Check the browser console for errors.</p>
-      <p>Make sure charades.json exists in src/assets/</p>
     </div>
   </div>
 }
